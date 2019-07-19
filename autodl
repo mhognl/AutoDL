@@ -3,7 +3,7 @@ PS3='==========================================================================
 What format do you want to convert? Make your choice and enter the number.
 ==========================================================================
 I choose option: '
-options=("MP3 audio" "MP4 video" "Instructions" "Quit")
+options=("MP3 audio" "M4A audio" "AAC audio" "MP4 video" "Instructions" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -13,7 +13,31 @@ do
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
-                youtube-dl -x --audio-format mp3 -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                youtube-dl -x --format mp3 -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                echo "Wait..."
+                sleep 5
+                echo "...Converting done!"
+            ;;
+            
+        "M4A audio")
+                echo "=========================================================================="
+                echo "You chose MP4 Video"
+                sleep 2
+                echo "Will converting now..."
+                sleep 2
+                youtube-dl -x --format m4a -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                echo "Wait..."
+                sleep 5
+                echo "...Converting done!"
+            ;;
+            
+        "AAC audio")
+                echo "=========================================================================="
+                echo "You chose MP4 Video"
+                sleep 2
+                echo "Will converting now..."
+                sleep 2
+                youtube-dl -x --format aac -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
                 echo "Wait..."
                 sleep 5
                 echo "...Converting done!"
@@ -25,11 +49,12 @@ do
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
-                youtube-dl -x --format mp4 -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                youtube-dl --recode-video mp4 -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
                 echo "Wait..."
                 sleep 5
                 echo "...Converting done!"
             ;;
+            
         "Instructions")
                 echo "=========================================================================="
                 echo "Some instructions:"
@@ -38,6 +63,7 @@ do
                 echo "The last one: you need to choose an option in which format you want to have the output."
                 sleep 60
             ;;
+            
         "Quit")
                 break
             ;;
