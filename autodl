@@ -21,7 +21,7 @@ do
             
         "M4A audio")
                 echo "=========================================================================="
-                echo "You chose MP4 Video"
+                echo "You chose M4A audio"
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
@@ -33,7 +33,7 @@ do
             
         "AAC audio")
                 echo "=========================================================================="
-                echo "You chose MP4 Video"
+                echo "You chose AAC audio"
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
@@ -45,7 +45,7 @@ do
             
         "MP4 video")
                 echo "=========================================================================="
-                echo "You chose MP4 Video"
+                echo "You chose MP4 video"
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
