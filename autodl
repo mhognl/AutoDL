@@ -1,0 +1,45 @@
+#!/bin/bash
+PS3='==========================================================================
+What format do you want to convert? Make your choice and enter the number.
+==========================================================================
+I choose option: '
+options=("MP3 Audio" "MP4 Audio" "Instructions" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "MP3 Audio")
+            echo "=========================================================================="
+            echo "You chose MP3 Audio"
+            sleep 2
+            echo "Will converting now..."
+            sleep 2
+            youtube-dl -x --audio-format mp3 -a ~/ytdownloads/list.txt -o "~/ytdownloads/%(title)s.%(ext)s"
+            echo "Wait..."
+            sleep 5
+            echo "...Converting done!"
+            ;;
+        "MP4 Audio")
+            echo "=========================================================================="
+            echo "You chose MP4 Audio"
+            sleep 2
+            echo "Will converting now..."
+            sleep 2
+            youtube-dl -x --audio-format mp4 -a ~/ytdownloads/list.txt -o "~/ytdownloads/%(title)s.%(ext)s"
+            echo "Wait..."
+            sleep 5
+            echo "...Converting done!"
+            ;;
+        "Instructions")
+            echo "=========================================================================="
+            echo "Some instructions:"
+            echo "First, you need to put URL's in your homefolder. It's located under [YOUR_HOMEFOLDER]/ytdownloads."
+            echo "There's a file named 'list.txt'. You need to put the YouTube-URL in it."
+            echo "The last one: you need to choose an option in which format you want to have the file."
+            sleep 60
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
