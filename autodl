@@ -13,7 +13,7 @@ do
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
-                youtube-dl -x --format mp3 -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                youtube-dl -x --audio-format mp3 -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
                 echo "Wait..."
                 sleep 5
                 echo "...Converting done!"
@@ -25,7 +25,7 @@ do
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
-                youtube-dl -x --format m4a -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                youtube-dl -x --audio-format m4a -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
                 echo "Wait..."
                 sleep 5
                 echo "...Converting done!"
@@ -37,7 +37,7 @@ do
                 sleep 2
                 echo "Will converting now..."
                 sleep 2
-                youtube-dl -x --format aac -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                youtube-dl -x --audio-format aac -a /ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
                 echo "Wait..."
                 sleep 5
                 echo "...Converting done!"
