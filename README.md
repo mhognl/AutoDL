@@ -4,7 +4,7 @@ Auto download YouTube video's with YouTube-DL (Automating progress for YT)
 ## Installing
 It's just one line (must be running as root!):
 
-curl -L https://tomaaien.nl/AutoDL/install -o /tmp/install && bash /tmp/install && rm /tmp/install
+curl -L https://raw.githubusercontent.com/mhognl/AutoDL/master/install -o /tmp/install && bash /tmp/install && rm /tmp/install
 
 
 ## How To Use
