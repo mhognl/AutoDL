@@ -7,7 +7,7 @@ fi
 echo "Installing AutoDL now..."
 apt update &&
 apt full-upgrade -y &&
-apt install curl ffmpeg wget acl -y &&
+apt install curl ffmpeg wget acl python python2 python3 -y &&
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 chmod a+rx /usr/local/bin/youtube-dl
 wget https://github.com/mhognl/AutoDL/raw/master/autodl -O /usr/local/bin/autodl
