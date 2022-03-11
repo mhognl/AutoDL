@@ -1,0 +1,72 @@
+#!/bin/bash
+PS3='==========================================================================
+What format do you want to convert? Make your choice and enter the number.
+==========================================================================
+I choose option: '
+options=("MP3 audio" "M4A audio" "AAC audio" "MP4 video" "Instructions" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "MP3 audio")
+                echo "=========================================================================="
+                echo "You chose MP3 audio"
+                sleep 2
+                echo "Will converting now..."
+                sleep 2
+                youtube-dl -x --audio-format mp3 -a /usr/local/src/ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                echo "Wait..."
+                sleep 5
+                echo "...Converting done!"
+            ;;
+
+        "M4A audio")
+                echo "=========================================================================="
+                echo "You chose M4A audio"
+                sleep 2
+                echo "Will converting now..."
+                sleep 2
+                youtube-dl -x --audio-format m4a -a /usr/local/src/ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                echo "Wait..."
+                sleep 5
+                echo "...Converting done!"
+            ;;
+
+        "AAC audio")
+                echo "=========================================================================="
+                echo "You chose AAC audio"
+                sleep 2
+                echo "Will converting now..."
+                sleep 2
+                youtube-dl -x --audio-format aac -a /usr/local/src/ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                echo "Wait..."
+                sleep 5
+                echo "...Converting done!"
+            ;;
+
+        "MP4 video")
+                echo "=========================================================================="
+                echo "You chose MP4 video"
+                sleep 2
+                echo "Will converting now..."
+                sleep 2
+                youtube-dl --recode-video mp4 -a /usr/local/src/ytdownloads/list.txt -o "/ytdownloads/%(title)s.%(ext)s"
+                echo "Wait..."
+                sleep 5
+                echo "...Converting done!"
+            ;;
+
+        "Instructions")
+                echo "=========================================================================="
+                echo "Some instructions:"
+                echo "First, you need to put URL's in a file. It's located under /usr/local/src/ytdownloads."
+                echo "There's a file named 'list.txt'. You need to put the YouTube-URL in it."
+                echo "The last one: you need to choose an option in which format you want to have the output."
+                sleep 60
+            ;;
+
+        "Quit")
+                break
+            ;;
+            *) echo "invalid option $REPLY";;
+    esac
+done
